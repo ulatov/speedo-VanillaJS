@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+    <title>sπdo</title>
+  </head>  
+  <body>
+    <h1>sπdo</h1>    
+    <div>
+      <label><input type="checkbox" id="wakeLockCheckbox"> Activate <code>screen</code> Wake Lock</label>
+    </div>    
+    <div>    
+      <label><input type="checkbox" id="reacquireCheckbox"> Re-Acquire <code>screen</code> Wake Lock On Visibility Changes</label>
+    </div>
+    <div>
+      <button id="fullScreenButton" type="button">Go Full Screen</button>
+    </div>
+    <div id="statusDiv"></div>
+    <p><span id="f"></span> m/s</p>
+    <p><span id="g"></span> km/h</p>
+    <button onclick="buttonClickHandler(this)">Stop</button>
+  </body>
+</html>
