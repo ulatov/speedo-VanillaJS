@@ -116,7 +116,7 @@ if ('WakeLock' in window && 'request' in window.WakeLock) {
 
 var options = {
   enableHighAccuracy: true,
-  timeout: 5000,
+  timeout: 500,
   maximumAge: 0
 };
 
@@ -127,7 +127,11 @@ function doWatch(position) {
   document.getElementById("g").innerText = speedKilometersPerHour
 }
 
-let watchId = navigator.geolocation.watchPosition(doWatch);
+function doError(err) {
+  document.getElementById("s").innerText = 'ERROR(' + err.code + '): ' + err.message;
+}
+
+let watchId = navigator.geolocation.watchPosition(doWatch, doError, options);
 
 function buttonClickHandler(content) {
   if (watchId != -1) {
