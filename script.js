@@ -122,7 +122,7 @@ var options = {
 
 function doWatch(position) {
   const speedMetersPerSecond = Math.floor(position.coords.speed)
-  const speedKilometersPerHour = Math.floor(position.coords.speed * 3.6)
+  const speedKilometersPerHour = Math.floor(position.coords.speed * 36) / 10
   document.getElementById("f").innerText = speedMetersPerSecond
   document.getElementById("g").innerText = speedKilometersPerHour
 }
