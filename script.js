@@ -128,7 +128,7 @@ function doWatch(position) {
   /*
   document.getElementById("f").innerText = speedMetersPerSecond
   */
-  document.getElementById("g").innerText = speedKilometersPerHour
+  document.getElementById("speed").innerText = speedKilometersPerHour
 }
 
 function doError(err) {
