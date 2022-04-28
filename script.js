@@ -114,6 +114,9 @@ if ('WakeLock' in window && 'request' in window.WakeLock) {
 
 // GEO
 
+const speedSpan = document.querySelector('#speed');
+const errorDiv = document.querySelector('#s');
+
 var options = {
   enableHighAccuracy: true,
   timeout: 500,
@@ -128,11 +131,11 @@ function doWatch(position) {
   /*
   document.getElementById("f").innerText = speedMetersPerSecond
   */
-  document.getElementById("speed").innerText = speedKilometersPerHour
+  speedSpan.textContent = speedKilometersPerHour
 }
 
 function doError(err) {
-  document.getElementById("s").innerText = 'ERROR(' + err.code + '): ' + err.message;
+  errorDiv.textContent = 'ERROR(' + err.code + '): ' + err.message;
 }
 
 let watchId = navigator.geolocation.watchPosition(doWatch, doError, options);
@@ -141,11 +144,11 @@ function buttonClickHandler(content) {
   if (watchId != -1) {
     navigator.geolocation.clearWatch(watchId);
     watchId = -1;
-    content.innerText = "Start";
+    content.textContent = "Start";
   } else {
     watchId = navigator.geolocation.watchPosition(doWatch);
     if (watchId != -1) {
-      content.innerText = "Stop!";
+      content.textContent = "Stop";
     }
   }
 }
